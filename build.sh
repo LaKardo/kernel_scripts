@@ -90,7 +90,7 @@ check_img() {
 
 make_zip() {
 	mkdir -p $ZIP_DIR
-	cp $IMAGE $REPACK_DIR/zImage
+	cp $IMAGE $REPACK_DIR
 	cd $REPACK_DIR
 	zip -r9 `echo $ZIP_NAME`.zip *
 	mv  `echo $ZIP_NAME`*.zip $ZIP_DIR
