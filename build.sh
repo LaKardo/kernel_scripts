@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Trigger_build=1
+Trigger_build=2
 
 CHATID=482554110
 
