@@ -11,7 +11,8 @@ REPACK_DIR="$BASE_DIR/AnyKernel3"
 ZIP_DIR="$BASE_DIR/zip"
 KBUILD_OUTPUT="$KERNEL_DIR/out"
 
-IMAGE="$KBUILD_OUTPUT/arch/arm64/boot/Image.gz-dtb"
+IMAGE="$KBUILD_OUTPUT/arch/arm64/boot/Image.gz"
+DTB_OUT="$KBUILD_OUTPUT/arch/arm64/boot/dts/vendor/qcom"
 
 DEFCONFIG="soviet-star_defconfig"
 
@@ -90,6 +91,7 @@ check_img() {
 
 make_zip() {
 	mkdir -p $ZIP_DIR
+	cat $DTB_OUT/kona.dtb $DTB_OUT/kona-v2.dtb $DTB_OUT/kona-v2.1.dtb > $REPACK_DIR/dtb.img
 	cp $IMAGE $REPACK_DIR
 	cd $REPACK_DIR
 	zip -r9 `echo $ZIP_NAME`.zip *
