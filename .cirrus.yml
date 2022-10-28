@@ -4,7 +4,7 @@ task:
     - ./build.sh
   container: 
     cpu: 8
-    memory: 16G
+    memory: 6G
     image: "panchajanya1999/archlinux:latest"
   environment: 
     CIRRUS_CLONE_DEPTH: "1"
