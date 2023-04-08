@@ -1,0 +1,16 @@
+---
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: panchajanya1999/archlinux:latest
+   steps:
+      - run:
+          no_output_timeout: 50m
+          command: |
+            bash <(curl -s "https://raw.githubusercontent.com/LaKardo/kernel_scripts/main/build.sh") -S
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
